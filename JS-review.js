@@ -366,8 +366,7 @@ class Bike2 {
 //Session storage - stores data for one sesion and the data is lost when the browser tab is closed.
 //max 5MB
 
-// localStorage.setItem('logo', document.getElementById("logo").value);
-// localStorage.getItem('logo');
+//setItem(), getItem(), removeItem(), clear()
 
 //32. What is a Cookie?
 
@@ -379,6 +378,72 @@ document.cookie = "username=John; expires=Fri, 8 Jul 2022 12:00:00 UTC";
 
 //By default the cookie belongs to current page, but you can tell the browser what path the cookie belongs.
 document.cookie = "username=John; path/services";
+
+//33. Why do you need web storage?
+
+//Web storage is more secure and large amount of data can be stored locally, without affecting website performance.
+
+//34. What is a promise?
+
+//Promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it's not resolved.
+
+//Promises are used to handle asynchronous operations. They provide an alternative approach for callbacks.
+
+//Three states of promise:
+//Pending: initial state of Promise before an operation begins
+//Fulfilled: This state indicates that the specified operation was completed.
+//Rejected: This state indicates that the operation did not complete. In this case an error value will be thrown.
+
+const promise = new Promise(
+    (resolve) => {
+      setTimeout(() => {
+        resolve("I'm a Promise!");
+      }, 5000);
+    },
+    (reject) => {}
+  );
+  
+  promise.then((value) => console.log(value));
+
+  //35. What is a callback function?
+
+  //Function passed into another function as an argument. This function is invoked inside the outer function to complete an action. 
+
+  //Why do we use callback in JavaScript? Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has completed.
+
+  function callbackFn(name) {
+      setTimeout(() => {
+        console.log("Hello " + name);
+      }, 1000)
+     
+  }
+
+  function outerFn(callback) {
+      let name = "Anna";
+      callback(name);
+      console.log('cokowleik')
+  }
+  outerFn(callbackFn);
+
+  //The callbacks are needed because JS is an event driven language. That means instead of waiting for a response JS will keep executing while listening for other events.
+
+
+  function firstFn() {
+      //Simulate delay
+      setTimeout(function () {
+          console.log("First function called");
+      }, 1000);
+  }
+  function secondFn() {
+      console.log("Second function called");
+  }
+  firstFn();
+  secondFn();
+// Second function called
+// First function called
+
+
+
 
 
 
