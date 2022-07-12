@@ -396,51 +396,73 @@ document.cookie = "username=John; path/services";
 
 const promise = new Promise(
     (resolve) => {
-      setTimeout(() => {
-        resolve("I'm a Promise!");
-      }, 5000);
+        setTimeout(() => {
+            resolve("I'm a Promise!");
+        }, 5000);
     },
-    (reject) => {}
-  );
+    (reject) => { }
+);
+
+promise.then((value) => console.log(value));
+
+//Promise chaining
+
+//The procces of executing a sequence of asynchronous tasks one after another.
+
+//35. What is a callback function?
+
+//Function passed into another function as an argument. This function is invoked inside the outer function to complete an action. 
+
+//Why do we use callback in JavaScript? Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has completed.
+
+function greet(name, callback) {
+    console.log('Hi ' + name);
+    callback();
+}
+
+function callMe() {
+    console.log("I am a callback function");
+}
+
+//passing fn as an argument
+greet('Peter', callMe);
+
+//The callbacks are needed because JS is an event driven language. That means instead of waiting for a response JS will keep executing while listening for other events.
+
+//36. Server-side events
+
+//It's a server push technology enabling a browser to receive automatic updates from a server via HTTP connection without resorting to polling. These are a one way communications channel - events flow from server to client only.
+
+//It has 3 events:
+//onopen - when connection is opened
+//onmessage - when message is received
+//onerror - when error occurs
+
+//37. Promise.all
+
+//It takes an array of promises as an input and it gets resolved when all the promises get resolved or any one of them gets rejected.
+
+Promise.all([Promise1, Promise2, Promise3]).then((result) => { console.log(result) }).catch(error => console.log(error));
+
+//38. Promise.race()
+
+//It will return the promise instance which is firstly resolved or rejected.
+
+var promise1 = new Promise(function (resolve, reject) {
+    setTimeout(resolve, 500, "one");
+  });
+  var promise2 = new Promise(function (resolve, reject) {
+    setTimeout(resolve, 100, "two");
+  });
   
-  promise.then((value) => console.log(value));
+  Promise.race([promise1, promise2]).then(function (value) {
+    console.log(value); // "two" // Both promises will resolve, but promise2 is faster
+  });
 
-  //35. What is a callback function?
+  //39. Strict mode
 
-  //Function passed into another function as an argument. This function is invoked inside the outer function to complete an action. 
+  //Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict” operating context. This way it prevents certain actions from being taken and throws more exceptions. The literal expression "use strict"; instructs the browser to use the javascript code in the Strict mode.
 
-  //Why do we use callback in JavaScript? Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has completed.
-
-  function callbackFn(name) {
-      setTimeout(() => {
-        console.log("Hello " + name);
-      }, 1000)
-     
-  }
-
-  function outerFn(callback) {
-      let name = "Anna";
-      callback(name);
-      console.log('cokowleik')
-  }
-  outerFn(callbackFn);
-
-  //The callbacks are needed because JS is an event driven language. That means instead of waiting for a response JS will keep executing while listening for other events.
-
-
-  function firstFn() {
-      //Simulate delay
-      setTimeout(function () {
-          console.log("First function called");
-      }, 1000);
-  }
-  function secondFn() {
-      console.log("Second function called");
-  }
-  firstFn();
-  secondFn();
-// Second function called
-// First function called
 
 
 
