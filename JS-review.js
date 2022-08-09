@@ -478,6 +478,32 @@ delete user.age;
 //null: Object  undefined: undefined
 //null: converted to 0  undefined: converted to NaN
 
+//43. Eval
+
+//It evaluates JS code represented as a string. 
+console.log(eval("1 + 2"));
+
+//44. What is the difference between window and document?
+
+//Window: 
+//Root level element in any web page
+//By default available implicitly in the page
+//Methods: alert(), confirm() properties: document, location
+
+//Document:
+//Direct child of the window - window.document
+//Methods: getElementById, getElementsByTagName, createElement
+
+//45. How you access history in js?
+
+//The window history object contains the browser's history.
+//window.history.back(), window.history.forward()
+
+
+//46. Detect caps lock is turned on or not.
+
+//Use the mouseEvent - getModifierState("CapsLock");
+
 
 
 
