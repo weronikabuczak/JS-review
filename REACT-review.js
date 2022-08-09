@@ -169,5 +169,80 @@
 
 //If the behaviour of a component is dependent on the state of the component then it can be termed as stateful component.
 
+//52. Advantages of React.
 
+//Increases the application's performance with virtual DOM.
+//JSX makes code easy to read and write.
+//It renders both on client and server side.
+//Easy to integrate with frameworks.
+//Easy to write unit and integration tests with tools such as Jest.
 
+//53. Limitations of React.
+
+//Just a view library, not a full framework.
+//The code complexity increases with inline templating and JSX.
+//Too many smaller components leading to over engineering or boilerplate.
+
+//54. Error boundaries
+
+//Components that catch JS errors everywhere in their child component tree, log those errors and display a fallback UI instead of the component tree that crashed.
+//Error boundaries can be only defined in class components.
+
+//55. What are the recommended ways for static type checking?
+
+//PropTypes library
+//Flow
+//TypeScript
+
+//57. What is the use of react-dom package?
+
+//It provides DOM-specific methods that can be used at the top level of your app. Most of the components are not required to use this module.
+//some methods - render(), hydrate(), unmountComponentAtNode(), createPortal()
+
+//58. What is the purpose of render method of react-dom?
+
+//This method is used to render a REact element into the DOM in the supplied container and return a reference to the component. If the optional callback is provided, it will be executed after the component is rendered or updated.
+
+//ReactDOM.render(element, container, [callback])
+
+//70. How do you memoize a component?
+
+//React.memo is a higher order component which memoizes component until the props change.
+//Using memo will cause React to skip rendering a component if its props have not changed. This can improve performance.
+
+//74. What is the lifecycle methods order in mounting?
+
+//constructor()
+//static getDerivedStateFromProps()
+//render()
+//componentDidMount()
+
+//83. What is strict mode in React?
+
+//React.StrictMode is a useful component for highlighting potential problems in an app. It activates additional checks and warnings for its descendants. These checks apply for development mode only.
+
+//84. Template string / template literal
+
+//let text = `Welcome ${firstName}, ${lastName}!`;
+
+//96. What is the difference between React and ReactDOM?
+
+//React package contains: React.createElement(), React.Component, React.Children and other helpers.
+//React-dom package contains ReactDOM.render(). It's the glue between React and the DOM.
+
+//106. Why can't you update props in React?
+
+//The React philosophy is that props should be immutable and top-down. This means that a parent can send any prop values to a child, but the child can't modify received props.
+
+//107. How to focus an input element on page load?
+
+//const inputElRef = useRef();
+//inputElRef.current.focus();
+
+//108. What is a polyfill?
+
+//A polyfill is a browser fallback, made in JavaScript, that allows functionality you expect to work in modern browsers to work in older browsers, e.g., to support canvas (an HTML5 feature) in older browsers.
+
+//129. What is React router?
+
+// React Router is a powerful routing library built on top of React that helps you add new screens and flows to your application incredibly quickly, all while keeping the URL in sync with what's being displayed on the page.
