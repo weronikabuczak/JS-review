@@ -87,3 +87,87 @@
 //it is doing the comparison in memory.
 //Then React updates the Browser DOM with the least number of changes and possibly without rendering the entire DOM again.
 
+//26. Difference between shadow DOM and virtual DOM?
+
+// Virtual DOM is creating a copy of the whole DOM object, and Shadow DOM creates small pieces of the DOM object which has their own, isolated scope for the element they represent.
+
+//27. React Fiber.
+
+//The goal of Fiber is to increase its suitability for areas like animation, laoyut and gestures. Its headline feature is incremental rendering: the ability to split renedering work into chunks and spread it out over multiple frames.
+
+//29. Controlled components.
+
+//Controlled components in React are those in which form data is handled by the component’s state.
+
+//30. Uncontrolled components.
+
+//Uncontrolled components are those for which the form data is handled by the DOM itself. “Uncontrolled” refers to the fact that these components are not controlled by React state.
+
+//31. difference between createElement() and cloneElement()
+
+//JSX elements will be transpiled to React.createElement() functions to create React elements which are going to be used for the object representation of UI. Whereas cloneElement is used to clone an element and pass it new props.
+
+//32. Lifting state up?
+
+//When several components need to share the same changing data then it is recommended to lift the shared state up to their closest common ancestor. 
+
+//35. What are Higher-Order Components?
+
+// A higher-order component (HOC) is a function that takes a component and returns a new component. Basically, it's a pattern that is derived from React's compositional nature.
+
+//Pure components
+
+//The definition of Pure Component says that for specific input parameters, we always have a specific output. The output is solely dependent on Input parameters and no other external variable.
+
+//37. Context
+
+//Context provides a way to pass data through the component tree without having to pass props down manually at every level. 
+//Authentication, locale, UI themes
+
+//38. Children prop
+
+//Children is a prop (this.props.children) that allows you to pass components as data to other components, just like any other prop you use. Component tree put between component's opening and closing tag will be passed to that component as children prop.
+
+//41. Renonciliation
+
+//Process when component's props or state changes and React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they're not equal, React will update the DOM.
+
+//44. React.lazy
+
+//It lets you render a dynamic import as a regular component. This will automatically load the bundle containing the OtherComponent when the component is first rendered.
+
+//const OtherComponent = React.lazy(() => import('./OtherComponent));
+
+//The lazy component should then be rendered inside a Suspense component, which allows us to show some fallback content.
+
+{/* <Suspense fallback={<div>Loading...</div>}>
+        <OtherComponent />
+</Suspense> */}
+
+//45. Why React uses className over class attribute?
+
+//Class is a keyword in JS, and JSX is an extension of JS. That's the main reason.
+
+//46. What are fragments?
+
+//It's a common pattern in React which is used for a component to return multiple elements. Fragments let you group a list of children without adding extra nodes.
+
+//47. Why fragments are better?
+
+//Fragments are a bit faster and use less memory by not creating an extra DOM.
+//The Dom Inspector is less cluttered.
+
+//48. What are portals in React?
+
+//Portal is a recommended way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+
+//49. Stateless component.
+
+//Component which don't have state at all.
+
+//50. Stateful components.
+
+//If the behaviour of a component is dependent on the state of the component then it can be termed as stateful component.
+
+
+
