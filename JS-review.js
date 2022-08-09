@@ -463,6 +463,21 @@ var promise1 = new Promise(function (resolve, reject) {
 
   //Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict” operating context. This way it prevents certain actions from being taken and throws more exceptions. The literal expression "use strict"; instructs the browser to use the javascript code in the Strict mode.
 
+//40. What is the purpose of double exclamation
+
+//It ensures the resulting type is a boolean. 
+
+//41. What is the purpose of the delete operator?
+
+//It's used to delete the property as well as its value.
+var user = {name: "John", age: 20};
+delete user.age;
+
+//42. Differences between null and undefined?
+
+//null: Object  undefined: undefined
+//null: converted to 0  undefined: converted to NaN
+
 
 
 
